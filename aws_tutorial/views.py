@@ -4,6 +4,7 @@ from .forms import ImageForm
 def upload_image(request):
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
+        # form = ImageForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('success')
@@ -13,4 +14,7 @@ def upload_image(request):
 
 def success(request):
     return render(request, 'success.html')
+
+def pay(request):
+    pass
 
